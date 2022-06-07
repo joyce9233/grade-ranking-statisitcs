@@ -1,0 +1,85 @@
+#include<iostream>
+#include<iomanip>
+#include<string>
+#include"Course.h"
+#include"Student.h"
+using namespace std;
+
+/*void pass()
+{
+	for (int i = 1; i <4 ; i++)
+	{
+
+		if (Course().getAverage() < 60)
+			cout << " /Grade fail" << endl;
+		else
+			cout << " /Grade pass" << endl;
+	}
+
+}*/
+int main()
+{
+	string n1, n2, n3;
+	string ID1, ID2, ID3;
+	double c1, c2, c3, m1, m2, m3, e1, e2, e3;
+
+	cin >> n1 >> ID1 >> c1 >> m1 >> e1;
+	cin >> n2 >> ID2 >> c2 >> m2 >> e2;
+	cin >> n3 >> ID3 >> c3 >> m3 >> e3;
+
+	//Student student1(n1,ID1);
+
+	Course course1(c1, m1, e1);
+	Course course2(c2, m2, e2);
+	Course course3(c3, m3, e3);
+
+	Student student1(n1, ID1, course1);
+	Student student2(n2, ID2, course2);
+	Student student3(n3, ID3, course3);
+
+	//cout << n1 <<" " << ID1 << " ";
+
+	student1.printStudent();
+	//course1.setAverage()
+	if (student1.getCourse().getAverage() < 60)
+		cout << " /Grade fail";
+	else
+		cout << " /Grade pass";
+	if (student1.getCourse().getAverage() > student2.getCourse().getAverage() && student1.getCourse().getAverage() > student3.getCourse().getAverage()) {
+		cout << " 第一名" << endl;
+	}
+		else if (student1.getCourse().getAverage() < student2.getCourse().getAverage() && student1.getCourse().getAverage() < student3.getCourse().getAverage()) {
+			cout << " 第三名" << endl;
+		}
+		else
+			cout << " 第二名" << endl;
+
+	student2.printStudent();
+	if (student2.getCourse().getAverage() < 60) 
+		cout << " /Grade fail";
+	else
+		cout << " /Grade pass";
+	
+	if (student2.getCourse().getAverage() > student1.getCourse().getAverage() && student2.getCourse().getAverage() > student3.getCourse().getAverage()) {
+		cout << " 第一名" << endl;
+	}
+		else if (student2.getCourse().getAverage() < student1.getCourse().getAverage() && student2.getCourse().getAverage() < student3.getCourse().getAverage()) {
+			cout << " 第三名" << endl;
+		}
+		else
+			cout << " 第二名" << endl;
+
+	student3.printStudent();
+	if (student3.getCourse().getAverage() < 60)
+		cout << " /Grade fail";
+	else
+		cout << " /Grade pass";
+	if (student3.getCourse().getAverage() > student1.getCourse().getAverage() && student3.getCourse().getAverage() > student1.getCourse().getAverage()) {
+		cout << " 第一名" << endl;
+	}
+		else if (student3.getCourse().getAverage() < student1.getCourse().getAverage() && student3.getCourse().getAverage() < student2.getCourse().getAverage()) {
+			cout << " 第三名" << endl;
+		}
+		else
+			cout <<" 第二名" << endl;
+}
